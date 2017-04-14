@@ -1,0 +1,26 @@
+﻿nodepad++
+python2.7
+python3.5
+jdk jre
+R
+.net framework
+idm
+chrome
+potplayer
+foxit Reader
+git
+vim
+virtual box
+vagrant
+Rstudio
+ruby
+redis
+postgresql
+shadowsocks
+everything
+manictime
+eyedefender
+securecrt
+万能五笔
+讯飞语音
+有道词典
