@@ -1,0 +1,1 @@
+G:/project/sndnyang.github.io/pelicanconf.py
