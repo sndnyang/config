@@ -1,0 +1,42 @@
+{
+	"dpi_scale": 1.0,
+	"font_size": 18,
+	"ignored_packages":
+	[
+		"Vintage"
+	],
+	"tab_size": 4,
+    "translate_tabs_to_spaces": true,
+
+    //若要在保存时自动把tab 转换成空格，请把下面一行设置成 true，如不需要: 设置成 false
+
+    "expand_tabs_on_save": true
+}
+
+vim风格绑定键（不相同）
+
+[
+	{"keys": ["ctrl+p"], "command": "move", "args": {"by": "pages", "forward": true }},
+    {"keys": ["alt+p"], "command": "move", "args": {"by": "pages", "forward": false }},
+
+    {"keys": ["alt+h"], "command": "move_to", "args": {"to": "bol", "extend": false} },
+	{"keys": ["alt+e"], "command": "move_to", "args": {"to": "eol", "extend": false} },
+
+    {"keys": ["ctrl+h"], "command": "move", "args": {"by": "characters", "forward": false} },
+    {"keys": ["ctrl+l"], "command": "move", "args": {"by": "characters", "forward": true} },
+    {"keys": ["ctrl+k"], "command": "move", "args": {"by": "lines", "forward": false} },
+    {"keys": ["ctrl+j"], "command": "move", "args": {"by": "lines", "forward": true} },
+
+    
+	{"keys": ["alt+d"], "command": "right_delete" }
+]
+
+安装包
+
+Package Control
+MarkdownEditing
+Markdown Preview
+SublimeCodeIntel
+SublimeTmpl
+SideBarEnhancements
+Anaconda
