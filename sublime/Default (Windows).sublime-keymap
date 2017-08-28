@@ -1,0 +1,16 @@
+[
+    {"keys": ["ctrl+p"], "command": "move", "args": {"by": "pages", "forward": true }},
+    {"keys": ["alt+p"], "command": "move", "args": {"by": "pages", "forward": false }},
+
+    {"keys": ["alt+h"], "command": "move_to", "args": {"to": "bol", "extend": false} },
+    {"keys": ["alt+e"], "command": "move_to", "args": {"to": "eol", "extend": false} },
+
+    {"keys": ["ctrl+h"], "command": "move", "args": {"by": "characters", "forward": false} },
+    {"keys": ["ctrl+l"], "command": "move", "args": {"by": "characters", "forward": true} },
+    {"keys": ["ctrl+k"], "command": "move", "args": {"by": "lines", "forward": false} },
+    {"keys": ["ctrl+j"], "command": "move", "args": {"by": "lines", "forward": true} },
+
+    
+    {"keys": ["alt+d"], "command": "right_delete" },
+    {"keys": ["alt+t"], "command": "cloudcoder" }
+]

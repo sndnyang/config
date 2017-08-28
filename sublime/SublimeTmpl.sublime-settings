@@ -1,0 +1,10 @@
+{  
+    "disable_keymap_actions": false, // "all"; "html,css" 
+    "enable_file_variables_on_save": true, 
+    "date_format" : "%Y-%m-%d %H:%M:%S",  
+    "attr": {  
+        "author": "sndnyang",  
+        "email": "sndnyangd@gmail.com",  
+        "link": "http://blog.zhimind.com/"  
+    }  
+}  
