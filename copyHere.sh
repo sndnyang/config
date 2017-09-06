@@ -12,6 +12,9 @@ cp "$sublime/SublimeTmpl.sublime-settings" sublime
 cp "$sublime/Preferences.sublime-settings" sublime
 cp "$sublime/Package Control.sublime-settings" sublime
 cp "$sublime/Default (Windows).sublime-keymap" sublime
+cp -r "$sublime/../cloudCoder/cloudCoder.py" sublime/cloudCoder/cloudCode_plugin.py
+
+cp G:/project/other/Tools/pythonlib/CloudCoder.py sublime/cloudCoder/CloudCoder.py
 
 echo "OK? enter anything to exit"
 

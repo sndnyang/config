@@ -12,5 +12,6 @@
 
     
     {"keys": ["alt+d"], "command": "right_delete" },
-    {"keys": ["alt+t"], "command": "cloudcoder" }
+    {"keys": ["alt+t"], "command": "cloudcoder", "args": {"method": "get"} },
+    {"keys": ["alt+u"], "command": "cloudcoder", "args": {"method": "post"} }
 ]
