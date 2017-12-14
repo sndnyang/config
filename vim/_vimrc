@@ -192,7 +192,11 @@ iab xdate <c-r>=strftime("%Y-%m-%d %H:%M:%S")<CR>
 iab xfile <c-r>=expand("%:t")<CR>
 
 let g:NERDTree_title="[NERDTree]"
-let g:winManagerWindowLayout="NERDTree|Tagbar"
+let g:Tagbar_title = "[Tagbar]"
+let g:winManagerWindowLayout="NERDTree|Taglist"
+let g:tagbar_left = 1
+let g:tagbar_width = 25
+
 
 function! NERDTree_Start()
     exec 'NERDTree'
@@ -204,6 +208,9 @@ endfunction
 
 "let g:winManagerWindowLayout='TagList|FileExplorer,MiniBufExplorer'
 nmap wm :WMToggle<cr>
+nmap <silent> <F7> :WMToggle<cr>
+nnoremap <silent> <F8> :TagbarToggle<CR>
+
 "设置切换Buffer快捷键"
 nnoremap <C-N> :bn<CR>
 nnoremap <C-P> :bp<CR>

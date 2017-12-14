@@ -3,11 +3,13 @@ import os
 import re
 import sys
 import json
+import traceback
 
 import requests
 from requests import session
 
 from utility import str_obj
+from utility import printDeep
 
 def replace_html(s):
     s = s.replace('&quot;','"')
@@ -19,16 +21,18 @@ def replace_html(s):
     return s
 
 class CloudCoder:
-
     # __codeBlockUrl = 'http://localhost:5000/codeBlock'
     __codeBlockUrl = 'https://www.zhimind.com/codeBlock'
     # __uploadCodeUrl = 'http://localhost:5000/uploadCodeBlock'
     __uploadCodeUrl = 'https://www.zhimind.com/uploadCodeBlock'
 
-    def __init__(self, apiKey=""):
-
-        # self._apiKey = apiKey.strip() or os.environ.get("LOCAL_TOKEN", "")
-        self._apiKey = apiKey.strip() or os.environ.get("ZHIMIND_TOKEN", "")
+    def __init__(self, apiKey="", debug=False):
+        if debug:
+            self._apiKey = apiKey.strip() or os.environ.get("LOCAL_TOKEN", "")
+            self.__codeBlockUrl = 'http://localhost:5000/codeBlock'
+            self.__uploadCodeUrl = 'http://localhost:5000/uploadCodeBlock'
+        else:
+            self._apiKey = apiKey.strip() or os.environ.get("ZHIMIND_TOKEN", "")
         self.__connectTimeout = 60.0
         self.__socketTimeout = 60.0
         self.__version = '0_0_0'
@@ -37,26 +41,31 @@ class CloudCoder:
     def post_code(self, data):
         header = {"Authorization": "Bearer " + self._apiKey}
         try:
-            r = requests.post(url=self.__uploadCodeUrl, json=data, headers=header)
+            r = requests.post(url=self.__uploadCodeUrl, 
+                              json=data, 
+                              headers=header, 
+                              verify=False)
             r.raise_for_status()
             print("status: ", r.status_code)
             return json.loads(r.content.decode('utf-8'), strict=False)
         except:
-            return ""
+            print(traceback.print_exc())
+            return "Error error"
 
     def get_list(self, match):
         if "," not in match and " " in match:
             match = ",".join(e for e in match.split())
 
         header = {"Authorization": "Bearer " + self._apiKey}
-        
         try:
-            r = requests.get(url=self.__codeBlockUrl, params={'keyword': match}, headers=header)
+            r = requests.get(url=self.__codeBlockUrl, params={'keyword': match}, 
+                             headers=header, verify=False)
             r.raise_for_status()
-            print("status: ", r.status_code)
+            print("status: " + str(r.status_code))
             return json.loads(r.content.decode('utf-8'), strict=False)
         except:
-            return ""
+            print(traceback.print_exc())
+            return "Error error"
 
     def show_titles(self, json):
         return '\n'.join(e['title'] + ' ' + e['url'] for e in json)
@@ -72,7 +81,7 @@ class CloudCoder:
 
     def get_code_by_parts(self, match, keys):
         json = self.get_json(match)
-        if isinstance(json, str):
+        if isinstance(json, str_obj):
             return json
         if u'msg' in json or u'error' in json:
             return "Error: not find any one"
@@ -82,7 +91,7 @@ class CloudCoder:
         return self.convert_md_json(self.get_markdown(match))
 
     def convert_md_json(self, content):
-        if content.startswith("Error:") or content.startswith("Options:"):
+        if content.startswith("Error:") or content.startswith("\nOptions"):
             return content
         maps = {"code": ""}
         lines = content.replace("\r", "").split("\n")
@@ -93,10 +102,12 @@ class CloudCoder:
     def get_markdown(self, match):
         if self._apiKey:
             match_list = self.get_list(match)
+            if "error" in match_list:
+                return "Error: nothing find"
             if len(match_list) == 1:
                 return match_list[0]['content']
             elif len(match_list) > 1:
-                return "Options:\n" + self.show_titles(match_list)
+                return "\nOptions:\n" + self.show_titles(match_list)
             else:
                 return "Error: nothing find"
         return "Error: no token"
@@ -141,29 +152,36 @@ class CloudCoder:
         return self.to_hierarchy_json(maps, lines, level, lineno+1)
 
 
-    def filter_json(self, json, keys):
+    def filter_json(self, data, keys):
         if keys == "all":
-            return self.convert_json_plain(json, '')
+            # printDeep(data, 0)
+            return self.convert_json_plain(data, '')
         maps = {'调用':"call", "定义":"implement", "实现":"implement"}
         keys = [e.lower() for e in keys]
         en_maps = [maps[e] for e in keys if e in maps]
         parts = []
-        for k in json:
+        for k in data:
             if k.lower() in keys or k.lower() in en_maps:
-                parts.append(self.convert_json_plain(json[k], k))
-            elif isinstance(json[k], dict):
-                result = self.filter_json(json[k], keys)
+                parts.append(self.convert_json_plain(data[k], k))
+            elif isinstance(data[k], dict):
+                result = self.filter_json(data[k], keys)
                 if result:
                     parts.append(result)
         return '\n'.join(parts)
 
-    def convert_json_plain(self, json, key):
+    def convert_json_plain(self, data, key):
         lines = [key]
-        for k in json:
-            if isinstance(json[k], dict):
-                lines.append(self.convert_json_plain(json[k], k))
-            elif isinstance(json[k], str_obj):
+        for k in data:
+            if isinstance(data[k], dict):
+                lines.append(self.convert_json_plain(data[k], k))
+            elif isinstance(data[k], str_obj):
                 if k != "code":
                     lines.append(k)
-                lines.append(json[k])
+                lines.append(data[k])
         return '\n'.join(lines)
+
+
+if __name__ == '__main__':
+    c_coder = CloudCoder()
+    content = c_coder.get_code("Ajax")
+    print(content)

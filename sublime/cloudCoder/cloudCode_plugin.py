@@ -32,7 +32,10 @@ class cloudcoderCommand(sublime_plugin.TextCommand):
                 content = c_coder.get_code(search_words, split[1].split())
             else:
                 content = c_coder.get_code(content)
-            if content.startswith("Error: ") or content.startswith("Options:"):
+            if content.startswith("Error: "):
+                sublime.message_dialog(content)
+                return
+            if content.startswith("\nOptions:"):
                 self.view.insert(edit, match.end(), content)
             else:
                 self.view.replace(edit, match, content)
