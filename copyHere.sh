@@ -5,6 +5,7 @@ cp C:/Users/Administrator/_vimrc vim
 cp -rf E:/software/vim/vimfiles/ftdetect vim
 cp -rf E:/software/vim/vimfiles/ftplugin vim
 cp C:/Users/Administrator/.bashrc .bashrc
+cp C:/Users/Administrator/pip/pip.ini pip.ini
 
 sublime="C:/Users/Administrator/AppData/Roaming/Sublime Text 3/Packages/User"
 cp "$sublime/SublimeTmpl/templates/md.tmpl" sublime/template
