@@ -1,0 +1,44 @@
+# .bashrc
+
+# Source global definitions
+if [ -f /etc/bashrc ]; then
+	. /etc/bashrc
+fi
+
+# Uncomment the following line if you don't like systemctl's auto-paging feature:
+# export SYSTEMD_PAGER=
+
+# User specific aliases and functions
+
+ 
+
+alias ll='ls -alF'
+alias lt='ls -ltr'
+alias la='ls -A'
+alias l='ls -CF'
+alias tree='tree --charset=ASCII'
+
+source /opt/intel/compilers_and_libraries/linux/bin/compilervars.sh intel64
+#source /opt/intel/compilers_and_libraries_2016.2.181/linux/bin/compilervars.sh intel64
+source /opt/intel/impi/2017.3.196/bin64/mpivars.sh
+export INTEL_LICENSE_FILE=/opt/intel/licenses/
+
+ver=9.0
+export PATH=/usr/local/cuda-$ver/bin:/usr/local/cuda-$ver/extras/CUPTI/include:/home/sji/tools/pycharm-2017.2.2/bin:$PATH
+export LD_LIBRARY_PATH=/usr/local/cuda-$ver/lib64:/usr/local/cuda-$ver/extras/CUPTI/lib64:$LD_LIBRARY_PATH
+export PATH=/usr/local/cudnn-$ver/include:$PATH
+export LD_LIBRARY_PATH=/usr/local/cudnn-$ver/lib64:$LD_LIBRARY_PATH
+# added by Anaconda3 installer
+export PATH="$PATH:/home/xyang2/software/anaconda3/bin:/opt/intel/bin/:/home/xyang2/software/"
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/opt/intel/compilers_and_libraries_2017.4.196/linux/mkl/lib/intel64_lin/:/opt/intel/clck/2017.2.019/provider/share/common/lib/intel64:/usr/lib/
+export PATH=$PATH:/usr/libexec/git-core
+
+alias pyact="source $HOME/software/pylib/bin/activate"
+
+alias clion="/home/xyang2/software/clion-2017.3.4/bin/clion.sh&"
+alias pycharm="/home/xyang2/software/pycharm-2017.3.4/bin/pycharm.sh&"
+alias gpush="git push origin master"
+alias appmenu="alacarte"
+alias mendeley="$HOME/software/mendeley/bin/mendeleydesktop"
+
+export PS1="\[\e[37;40m\][\[\e[32;40m\]\u\[\e[37;40m\]@\h \[\e[35;40m\]\W\[\e[0m\]]\\$ "
