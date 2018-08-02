@@ -37,8 +37,8 @@ set tm=500
 set textwidth=79
 
 "显示行号：
-set number
-"set nowrap                    " 取消换行。
+set number relativenumber
+set nowrap                    " 取消换行。
 
 "括号配对情况
 set showmatch
@@ -225,3 +225,5 @@ let g:airline#extensions#tabline#enabled = 1
 
 " 切换buffer时， 不要提醒保存
 set hidden
+
+nmap <silent> gw "_yiw:s/\(\%#\w\+\)\(\_W\+\)\(\w\+\)/\3\2\1/<CR><C-o>:noh<CR>"
