@@ -10,35 +10,55 @@ fi
 
 # User specific aliases and functions
 
- 
-
 alias ll='ls -alF'
 alias lt='ls -ltr'
 alias la='ls -A'
 alias l='ls -CF'
 alias tree='tree --charset=ASCII'
+alias tfact="source ~/software/tensorflow/bin/activate"
 
+#source /opt/intel/composerxe/bin/compilervars.sh intel64
 source /opt/intel/compilers_and_libraries/linux/bin/compilervars.sh intel64
 #source /opt/intel/compilers_and_libraries_2016.2.181/linux/bin/compilervars.sh intel64
 source /opt/intel/impi/2017.3.196/bin64/mpivars.sh
 export INTEL_LICENSE_FILE=/opt/intel/licenses/
 
+
 ver=9.0
 export PATH=/usr/local/cuda-$ver/bin:/usr/local/cuda-$ver/extras/CUPTI/include:/home/sji/tools/pycharm-2017.2.2/bin:$PATH
 export LD_LIBRARY_PATH=/usr/local/cuda-$ver/lib64:/usr/local/cuda-$ver/extras/CUPTI/lib64:$LD_LIBRARY_PATH
 export PATH=/usr/local/cudnn-$ver/include:$PATH
-export LD_LIBRARY_PATH=/usr/local/cudnn-$ver/lib64:$LD_LIBRARY_PATH
-# added by Anaconda3 installer
-export PATH="$PATH:/home/xyang2/software/anaconda3/bin:/opt/intel/bin/:/home/xyang2/software/"
-export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/opt/intel/compilers_and_libraries_2017.4.196/linux/mkl/lib/intel64_lin/:/opt/intel/clck/2017.2.019/provider/share/common/lib/intel64:/usr/lib/
-export PATH=$PATH:/usr/libexec/git-core
+export LD_LIBRARY_PATH=/usr/local/cudnn-$ver/lib64:/usr/lib64/python2.7/site-packages/torch/lib/:$LD_LIBRARY_PATH
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/lib:$HOME/project/pylib
+export PYTHON_LIBRARY=$PYTHON_LIBRARY:$HOME/project/pylib
+export PYTHONPATH=$PYTHONPATH:$HOME/project/pylib
 
-alias pyact="source $HOME/software/pylib/bin/activate"
+# added by Anaconda2 2.5.0 installer
+export PATH="/home/xyang22/anaconda2/bin:$PATH"
+export JAVA_HOME=/usr/local/jdk-9.0.4 
+export PATH=$JAVA_HOME/bin:$PATH 
+export CLASSPATH=.:$JAVA_HOME/lib/dt.jar:$JAVA_HOME/lib/tools.jar 
 
-alias clion="/home/xyang2/software/clion-2017.3.4/bin/clion.sh&"
-alias pycharm="/home/xyang2/software/pycharm-2017.3.4/bin/pycharm.sh&"
+# import command
+alias clion="$HOME/software/clion-2017.3.4/bin/clion.sh&"
+alias pycharm="$HOME/software/pycharm-2018.1.2/bin/pycharm.sh&"
 alias gpush="git push origin master"
 alias appmenu="alacarte"
 alias mendeley="$HOME/software/mendeley/bin/mendeleydesktop"
+alias acttf="source $HOME/software/tensorflow/bin/activate"
+alias actpy="source $HOME/software/pylib/bin/activate"
+alias actkeras="source $HOME/software/tensorflow/bin/activate"
+alias actold="source $HOME/software/acl/bin/activate"
+alias actpytorch="source $HOME/software/tensorflow/bin/activate"
+alias actdl="source $HOME/software/dllib/bin/activate"
+alias actdl3="source $HOME/software/dllib3/bin/activate"
+alias wnv="watch nvidia-smi"
+alias nv="nvidia-smi"
+alias nvs="$HOME/project/Tools/nvsts"
+alias bashrc="source ~/.bashrc"
+alias switch="source switchBranch.sh"
 
 export PS1="\[\e[37;40m\][\[\e[32;40m\]\u\[\e[37;40m\]@\h \[\e[35;40m\]\W\[\e[0m\]]\\$ "
+
+alias pylib="cd $HOME/project/pylib"
+
