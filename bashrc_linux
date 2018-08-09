@@ -43,6 +43,7 @@ export CLASSPATH=.:$JAVA_HOME/lib/dt.jar:$JAVA_HOME/lib/tools.jar
 alias clion="$HOME/software/clion-2017.3.4/bin/clion.sh&"
 alias pycharm="$HOME/software/pycharm-2018.1.2/bin/pycharm.sh&"
 alias gpush="git push origin master"
+alias gsync="git push sync exp:exp"
 alias appmenu="alacarte"
 alias mendeley="$HOME/software/mendeley/bin/mendeleydesktop"
 alias acttf="source $HOME/software/tensorflow/bin/activate"
@@ -56,7 +57,7 @@ alias wnv="watch nvidia-smi"
 alias nv="nvidia-smi"
 alias nvs="$HOME/project/Tools/nvsts"
 alias bashrc="source ~/.bashrc"
-alias switch="source switchBranch.sh"
+alias swi="source switchBranch.sh"
 
 export PS1="\[\e[37;40m\][\[\e[32;40m\]\u\[\e[37;40m\]@\h \[\e[35;40m\]\W\[\e[0m\]]\\$ "
 
