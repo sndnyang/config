@@ -20,4 +20,4 @@ keras
 datasets
 asctime
 lineno
-
+visdom
