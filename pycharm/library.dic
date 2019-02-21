@@ -21,3 +21,13 @@ datasets
 asctime
 lineno
 visdom
+pred
+argsort
+softmax
+pretrained
+vgg
+resnet
+perceptron
+lenet
+alexnet
+logits
