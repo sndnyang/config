@@ -17,6 +17,9 @@ cp -r "$sublime/../cloudCoder/cloudCoder.py" sublime/cloudCoder/cloudCode_plugin
 
 cp G:/project/other/Tools/pythonlib/CloudCoder.py sublime/cloudCoder/CloudCoder.py
 
+cp $APPDATA/Code/User/settings.json vscode
+cp $APPDATA/Code/User/keybindings.json vscode
+
 echo "OK? enter anything to exit"
 
 read

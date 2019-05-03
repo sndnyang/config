@@ -1,0 +1,26 @@
+{
+    "editor.fontSize": 20,
+    "window.zoomLevel": 0,
+    "latex-workshop.view.pdf.viewer": "tab",
+    "latex-workshop.latex.recipes": [
+        {
+            "name": "pdflatex -> bibtex -> pdflatex*2",
+            "tools": [
+                "pdflatex",
+                "bibtex",
+                "pdflatex",
+                "pdflatex"
+            ]
+        }
+    ],
+    "editor.wordWrap": "on",
+    "vim.handleKeys": {
+        "<C-a>": false,
+        "<C-c>": false,
+        "<C-n>": false,
+        "<C-w>": false
+    },
+    "vim.neovimPath": "D:\\software\\Neovim\\bin\\nvim.exe",
+    "vim.enableNeovim": true,
+    "diffEditor.originalEditable": true
+}
