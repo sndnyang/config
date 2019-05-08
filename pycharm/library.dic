@@ -31,3 +31,8 @@ perceptron
 lenet
 alexnet
 logits
+nfunc
+docopt
+argparse
+batchmean
+cudnn

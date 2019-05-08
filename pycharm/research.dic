@@ -4,3 +4,7 @@ vat
 wlog
 reparameterize
 logit
+logits
+semisup
+xent
+unsup
