@@ -39,10 +39,14 @@ set noerrorbells
 set novisualbell
 set t_vb=
 set tm=500
-set textwidth=79
 
 "显示行号：
-set number
+set number relativenumber
+augroup numbertoggle
+    autocmd!
+    autocmd BufEnter,FocusGained,InsertLeave * if &nu | set rnu   | endif
+    autocmd BufLeave,FocusLost,InsertEnter   * if &nu | set nornu | endif
+augroup END
 "set nowrap                    " 取消换行。
 
 "括号配对情况
