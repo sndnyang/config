@@ -1,42 +1,47 @@
-<component name="InspectionProjectProfileManager">
-  <profile version="1.0">
-    <option name="myName" value="Project Default" />
-    <inspection_tool class="PyCompatibilityInspection" enabled="true" level="WARNING" enabled_by_default="true">
-      <option name="ourVersions">
-        <value>
-          <list size="2">
-            <item index="0" class="java.lang.String" itemvalue="2.7" />
-            <item index="1" class="java.lang.String" itemvalue="3.7" />
-          </list>
-        </value>
-      </option>
-    </inspection_tool>
-    <inspection_tool class="PyUnresolvedReferencesInspection" enabled="true" level="WARNING" enabled_by_default="true">
-      <option name="ignoredIdentifiers">
-        <list>
-          <option value="torch.cuda" />
-          <option value="torch.device" />
-          <option value="torch.FloatTensor" />
-          <option value="torch.zeros" />
-          <option value="torch.LongTensor" />
-          <option value="numpy.random" />
-          <option value="torch.Tensor" />
-          <option value="numpy.where" />
-          <option value="numpy.concatenate" />
-          <option value="torch.max" />
-          <option value="torch.sum" />
-          <option value="torch.save" />
-          <option value="torch.nn" />
-          <option value="torch.utils" />
-          <option value="torch.optim" />
-          <option value="matplotlib.pyplot" />
-          <option value="numpy.*" />
-          <option value="os" />
-          <option value="traceback" />
-          <option value="random" />
-          <option value="sys" />
+<profile version="1.0">
+  <option name="myName" value="Project Default" />
+  <inspection_tool class="PyCompatibilityInspection" enabled="true" level="WARNING" enabled_by_default="true">
+    <option name="ourVersions">
+      <value>
+        <list size="2">
+          <item index="0" class="java.lang.String" itemvalue="2.7" />
+          <item index="1" class="java.lang.String" itemvalue="3.7" />
         </list>
-      </option>
-    </inspection_tool>
-  </profile>
-</component>
+      </value>
+    </option>
+  </inspection_tool>
+  <inspection_tool class="PyUnresolvedReferencesInspection" enabled="true" level="WARNING" enabled_by_default="true">
+    <option name="ignoredIdentifiers">
+      <list>
+        <option value="torch.cuda" />
+        <option value="torch.device" />
+        <option value="torch.FloatTensor" />
+        <option value="torch.zeros" />
+        <option value="torch.LongTensor" />
+        <option value="numpy.random" />
+        <option value="torch.Tensor" />
+        <option value="numpy.where" />
+        <option value="numpy.concatenate" />
+        <option value="torch.max" />
+        <option value="torch.sum" />
+        <option value="torch.save" />
+        <option value="torch.nn" />
+        <option value="torch.utils" />
+        <option value="torch.optim" />
+        <option value="matplotlib.pyplot" />
+        <option value="numpy.*" />
+        <option value="os" />
+        <option value="traceback" />
+        <option value="random" />
+        <option value="sys" />
+        <option value="torch.randn" />
+        <option value="torch.sigmoid" />
+        <option value="torch.log" />
+        <option value="torch.mean" />
+        <option value="torch.abs" />
+        <option value="tensorboardX" />
+        <option value="torch.rand" />
+      </list>
+    </option>
+  </inspection_tool>
+</profile>
