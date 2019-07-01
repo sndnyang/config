@@ -8,3 +8,9 @@ logits
 semisup
 xent
 unsup
+unlabel
+unlabeled
+deepfool
+FGSM
+FGS
+fgsm

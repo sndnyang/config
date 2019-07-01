@@ -36,3 +36,7 @@ docopt
 argparse
 batchmean
 cudnn
+optim
+widetilde
+autograd
+randn
