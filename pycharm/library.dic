@@ -40,3 +40,7 @@ optim
 widetilde
 autograd
 randn
+tanh
+arange
+Sprop
+Chainer
