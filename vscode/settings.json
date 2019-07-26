@@ -18,9 +18,11 @@
         "<C-a>": false,
         "<C-c>": false,
         "<C-n>": false,
+        "<C-x>": false,
         "<C-w>": false
     },
     "vim.neovimPath": "D:\\software\\Neovim\\bin\\nvim.exe",
     "vim.enableNeovim": true,
-    "diffEditor.originalEditable": true
+    "diffEditor.originalEditable": true,
+    "workbench.editor.closeOnFileDelete": true
 }

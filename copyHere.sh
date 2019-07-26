@@ -1,4 +1,4 @@
-cp G:/project/sndnyang.github.io/pelicanconf.py github.io
+cp G:/project/blog/pelicanconf.py github.io
 
 cp C:/Users/Administrator/_vimrc vim
 
