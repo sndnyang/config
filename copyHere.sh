@@ -19,6 +19,7 @@ cp G:/project/other/Tools/pythonlib/CloudCoder.py sublime/cloudCoder/CloudCoder.
 
 cp $APPDATA/Code/User/settings.json vscode
 cp $APPDATA/Code/User/keybindings.json vscode
+cp $APPDATA/Code/User/spellright.dict vscode
 
 echo "OK? enter anything to exit"
 
