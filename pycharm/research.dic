@@ -16,3 +16,7 @@ FGS
 fgsm
 transductive
 imagenet
+chatbot
+LSTM
+learnable
+reparameter
