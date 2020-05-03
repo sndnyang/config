@@ -10,7 +10,7 @@ if sys.getdefaultencoding() != 'utf8':
 
             
 AUTHOR = u'sndnyang'
-SITENAME = u'\u61d2\u9f99\u8c37'
+SITENAME = u'科探空谷'
 
 # TODO: 这个是我的网站名
 DISQUS_SITENAME = 'sndnyang'
@@ -30,8 +30,8 @@ TRANSLATION_FEED_ATOM = None
 AUTHOR_FEED_ATOM = None
 AUTHOR_FEED_RSS = None
 
-THEME = 'G:\software\open_source\pelican-elegant'
-PLUGIN_PATHS = ['G:\software\open_source\pelican-plugins']
+THEME = r'E:\project\blog\pelican\pelican-elegant'
+PLUGIN_PATHS = [r'E:\project\blog\pelican\pelican-plugins']
 PLUGINS = ['sitemap', 'extract_toc', 'tipue_search', 'ipynb.liquid']
 MD_EXTENSIONS = ['codehilite(css_class=highlight)', 'extra', 'headerid', 'toc', 'problem']
 DIRECT_TEMPLATES = (('index', 'tags', 'categories','archives', 'search', '404'))
@@ -50,15 +50,10 @@ LINKS = (('Pelican', 'http://getpelican.com/'),
 SOCIAL = (('You can add links in your config file', '#'),
           ('Another social link', '#'),)
 
-LANDING_PAGE_ABOUT = {'title': '卧龙凤雏，得一可安天下。', 
-        "details": '''I'm sndnyang, <a href="https://sndnyang.github.io">
-        sndnyang</a> at github <br>  <a href="http://blog.csdn.net/sndnyangd">
-        sndnyangd</a> at csdn<br> <a href="https://www.zhihu.com/people/jiandanminzhi">
-        简单名</a> at 知乎<br> <a href="http://weibo.com/u/2405149384">sndnyang</a>
-        at 微博。<br>
-        教育为先(启发、交互式教育 zhimind.com），医疗也好（不懂），需要自然语言处理和人工智能、机器学习，却先搞一堆小玩意<br>
-        ambitious but lazy,  first goal is the education(heuristic, interactive education technology www.zhimind.com), then health care(have no idea now)<br>
-        doing these by learning and applying natural language processing and artificial intelligence and machine learning.
+LANDING_PAGE_ABOUT = {'title': '科学，探索，空间，成长', 
+        "details": '''微博： <a href="https://www.weibo.com/u/2405149384" target="_blank">微博主页</a>
+        知乎： <a href="https://www.zhihu.com/people/jiandanminzhi" target="_blank">知乎主页</a>
+        公众号: zhimind <br><img src="/images/qrcode_zhimind.jpg"/>
         '''}
 
 DEFAULT_PAGINATION = 10
@@ -87,7 +82,7 @@ PROJECTS = [{'name': '知维图',
     {'name': 'algorithm vis study',
     'url': 'ds_alg_code.html',
     'description': 'a project use ideas from tryregex, elegatorsaga, based on'
-    'vis.js to learn algorithm (NOT USE)'},
+    'vis.js to learn algorithm (Unavailable)'},
     {'name': '幻灯片',
     'url': 'slides_set.html',
     'description': '制作的文本幻灯片集合， 应该多数是读论文的笔记'},    
@@ -104,3 +99,4 @@ COMMENTS_INTRO  = "this man is lazy, nothing left"
 #RELATIVE_URLS = True
 
 WEIBO_ID = "2405149384"
+SITEMAP= {'format': 'xml'}
