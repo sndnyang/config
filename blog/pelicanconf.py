@@ -4,11 +4,6 @@ from __future__ import unicode_literals
 
 import sys
 
-if sys.getdefaultencoding() != 'utf8':
-    reload(sys)
-    sys.setdefaultencoding('utf8')
-
-            
 AUTHOR = u'sndnyang'
 SITENAME = u'科探空谷'
 
@@ -33,7 +28,19 @@ AUTHOR_FEED_RSS = None
 THEME = r'E:\project\blog\pelican\pelican-elegant'
 PLUGIN_PATHS = [r'E:\project\blog\pelican\pelican-plugins']
 PLUGINS = ['sitemap', 'extract_toc', 'tipue_search', 'ipynb.liquid']
-MD_EXTENSIONS = ['codehilite(css_class=highlight)', 'extra', 'headerid', 'toc', 'problem']
+# MD_EXTENSIONS = ['codehilite(css_class=highlight)', 'extra', 'headerid', 'toc']  #, 'problem']
+
+MARKDOWN = {
+  'extension_configs' : {
+    #'markdown.extensions.fenced_code' : {},
+    'markdown.extensions.codehilite' : {'css_class': 'codehilite'},
+    'markdown.extensions.extra' : {},
+    # 'headerid' : {},
+    'markdown.extensions.toc' : {},
+    'markdown.extensions.problem': {}
+  }
+}
+
 DIRECT_TEMPLATES = (('index', 'tags', 'categories','archives', 'search', '404'))
 STATIC_PATHS = ['theme/images', 'images']
 TAG_SAVE_AS = ''
@@ -51,9 +58,10 @@ SOCIAL = (('You can add links in your config file', '#'),
           ('Another social link', '#'),)
 
 LANDING_PAGE_ABOUT = {'title': '科学，探索，空间，成长', 
-        "details": '''微博： <a href="https://www.weibo.com/u/2405149384" target="_blank">微博主页</a>
-        知乎： <a href="https://www.zhihu.com/people/jiandanminzhi" target="_blank">知乎主页</a>
-        公众号: zhimind <br><img src="/images/qrcode_zhimind.jpg"/>
+        "details": '''
+       Google Scholar： <a href="https://scholar.google.com/citations?user=iq-FsoMAAAAJ" target="_blank">Homepage</a>
+        百度学术: <a href="https://xueshu.baidu.com/homepage/sndnyang" target="_blank">主页</a><br>
+        
         '''}
 
 DEFAULT_PAGINATION = 10
@@ -65,6 +73,9 @@ PROJECTS = [{'name': '知维图',
     {'name': '大学录取条件信息库',
     'url': 'http://www.zhimind.com/oversea/research.html',
     'description': 'GPA、截止日期、学费，研究方向、招生意向等信息，勉强有个爬虫爬研究方向、招生意向，但需要人工定制关键字'},
+    {'name': 'Educational Policy Analytics',
+    'url': 'https://nitro2.cs.gsu.edu',
+    'description': 'Educational Policy Analytics, text mining'},
     {'name': 'gpa 计算器',
     'url': 'gpa_calculator.html',
     'description': '就是一个多功能多算法的GPA计算器,拒绝一行行手工输入'},
@@ -77,8 +88,7 @@ PROJECTS = [{'name': '知维图',
     {'name': 'Deep Q Network Player',
     'url': 'https://github.com/sndnyang/GamePlayer',
     'description': '''a project use Deep Q Network(DQN) to auto learn how to play game with screen capture and computer vision and plan for a really complicated\complex practise system for all kinds of AI technologies.
-    深度强化学习来玩游戏，但尽量不接入游戏源代码，采用连续截图、计算机视觉分析图片的方式来代替游戏直接的状态数据，
-    另外，计划弄成一个比较复杂、全面的人工智能知识实践项目。深度强化学习、 监督学习都用得上'''},
+    深度强化学习来玩游戏，但尽量不接入游戏源代码，采用连续截图、计算机视觉分析图片的方式来代替游戏直接的状态数据，'''},
     {'name': 'algorithm vis study',
     'url': 'ds_alg_code.html',
     'description': 'a project use ideas from tryregex, elegatorsaga, based on'
@@ -98,5 +108,12 @@ COMMENTS_INTRO  = "this man is lazy, nothing left"
 # Uncomment following line if you want document-relative URLs when developing
 #RELATIVE_URLS = True
 
-WEIBO_ID = "2405149384"
-SITEMAP= {'format': 'xml'}
+# WEIBO_ID = "2405149384"
+SITEMAP= {'format': 'xml'},
+
+
+# changlog
+changelog = '''
+20240604
+pelican 4.9.1,  MD_extension 过时， 改成 Markdown， headerid 不能用, liquid_tags 影响不大,
+'''
